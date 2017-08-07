@@ -3,8 +3,7 @@ import {connect} from  "react-redux";
 
 class Content extends Component{
 	render(){
-		
-		if(!this.props.user){
+		if(!this.props.git.user){
 			return(
 				<div className = "container">
 					<div className = "columns content">
@@ -23,7 +22,7 @@ class Content extends Component{
 						<div className = "column col-3"></div>
 						<div className = "column col-6">
 							<figure className="avatar avatar-xl">
-							  <img src={this.props.user.avatar_url}/>
+							  <img src={this.props.git.user.avatar_url}/>
 							</figure>
 						</div>
 					</div>
@@ -35,7 +34,7 @@ class Content extends Component{
 
 function mapStateToProps(state){
 	return {
-		user:state.user
+		git:state.git
 	}
 }
 export default connect(mapStateToProps)(Content);
