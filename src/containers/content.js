@@ -1,34 +1,22 @@
 import React,{Component} from "react";
 import {connect} from  "react-redux";
+import Search from "../components/search";
+import Loading from "../components/Loading";
+import Detail from "../components/detail";
+import Err from "../components/error";
 
 class Content extends Component{
+
 	render(){
-		if(!this.props.git.user){
-			return(
-				<div className = "container">
-					<div className = "columns content">
-						<div className = "column col-3"></div>
-						<div className = "column col-6">
-						<h1>Search For User:-</h1>
-						</div>
-					</div>
-				</div>
-			);
-		}
-		else{
-			return (
-				<div className = "container">
-					<div className = "columns content">
-						<div className = "column col-3"></div>
-						<div className = "column col-6">
-							<figure className="avatar avatar-xl">
-							  <img src={this.props.git.user.avatar_url}/>
-							</figure>
-						</div>
-					</div>
-				</div>
-			);
-		}
+		const isFetching = this.props.git.isFetching;
+		const isFetched = this.props.git.isFetched;
+		const error = this.props.git.error;
+		const userDetail = this.props.git.user;
+		return(
+			<div className="container">
+				{isFetching?(<Loading/>):(!isFetched?(error?(<Err msg={error}/>):<Search/>):(<Detail user={userDetail}/>))}
+			</div>
+		);
 	}
 }
 

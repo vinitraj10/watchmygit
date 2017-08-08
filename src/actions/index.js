@@ -6,8 +6,13 @@ export const ERROR = 'ERROR';
 
 export function getUser(username){
 	const root_url = "https://api.github.com/users/";
-	const url = `${root_url}${username}`
-	const request = axios.get(url)
+	
+	const url = `${root_url}${username}`;
+	//Use this when rate of api request exhausted!!
+	//const client_id = <your_client id>;
+	//const client_secret = <your_client_secret>;
+	//const rate_url = `${root_url}${username}?client_id=${client_id}&&client_secret=${client_secret}`;
+	const request = axios.get(url);
 	
 	// vanilla redux expects to return object of action type and data etc .
 

@@ -16,11 +16,11 @@ export default function (state=intialState,action){
 			break;
 		
 		case FETCHED_USER:
-			return {...state,isFetched:true,isFetching:false,user:action.payload.data}
+			return {...state,isFetched:true,isFetching:false,user:action.payload.data,error:null}
 			break;
 		
 		case ERROR:
-			return {...state,isFetching:false,error:action.payload.data}
+			return {...state,isFetching:false,isFetched:false,error:"An error Occured Please try again with correct username!!"}
 			break;
 	}
 	return state;
