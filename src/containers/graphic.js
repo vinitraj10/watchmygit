@@ -2,6 +2,7 @@ import React,{Component} from "react";
 import {getRepos} from "../actions";
 import {connect} from "react-redux";
 import {bindActionCreators} from "redux";
+import Graph from "./graph.js";
 
 class Graphic extends Component{
 	componentDidMount() {
@@ -10,7 +11,13 @@ class Graphic extends Component{
 		this.props.getRepos(username);
 	}
 	render(){
-		return <pre>{this.props.username}</pre>
+		const isFetching = this.props.repo.isFetching;
+		const isFetched = this.props.repo.isFetched;
+		return(
+			<div className="column col-10">
+				{isFetching?(<div className="loading"/>):(isFetched?(<Graph/>):(<h1>No Data</h1>))}
+			</div>
+		);
 	}
 
 }

@@ -16,9 +16,7 @@ export default class Detail extends Component{
 					  </div>
 					</div>
 				</div>
-				<div className="column col-9">
-					<Graphic username={this.props.user.login}/>
-				</div>
+				<Graphic username={this.props.user.login}/>
 			</div>
 		);
 	}
