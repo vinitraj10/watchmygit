@@ -2,7 +2,7 @@ import React,{Component} from "react";
 import {connect} from  "react-redux";
 import Search from "../components/search";
 import Loading from "../components/Loading";
-import Detail from "../components/detail";
+import Detail from "./detail";
 import Err from "../components/error";
 
 class Content extends Component{

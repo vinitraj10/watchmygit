@@ -2,7 +2,8 @@ import axios from "axios";
 export const FETCHING_USER = 'FETCHING_USER';
 export const FETCHED_USER = 'FETCHED_USER';
 export const ERROR = 'ERROR';
-
+export const FETCHING_REPO = 'FETCHING_REPO';
+export const FETCHED_REPO = 'FETCHED_REPO';
 
 export function getUser(username){
 	const root_url = "https://api.github.com/users/";
@@ -26,4 +27,19 @@ export function getUser(username){
 		})
 	}
 
+}
+
+export function getRepos(username){
+	
+	const root_url = "https://api.github.com/users/";
+	const repo_url =  "/repos";
+	const url = `${root_url}${username}${repo_url}`
+	const request =axios.get(url);
+	
+	return (dispatch) => {
+		dispatch({type:FETCHING_REPO});
+		request.then((response)=>{
+			dispatch({type:FETCHED_REPO,payload:response})
+		});
+	}
 } 
