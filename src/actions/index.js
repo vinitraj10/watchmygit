@@ -1,9 +1,17 @@
 import axios from "axios";
+//export statements of UserReducer
+
 export const FETCHING_USER = 'FETCHING_USER';
 export const FETCHED_USER = 'FETCHED_USER';
 export const ERROR = 'ERROR';
+//export statements for RepoReducer
+
 export const FETCHING_REPO = 'FETCHING_REPO';
 export const FETCHED_REPO = 'FETCHED_REPO';
+//export statements for CommitReducer
+
+export const FETCHING_COMMITS = 'FETCHING_COMMITS';
+export const FETCHED_COMMITS = 'FETCHED_COMMITS';
 
 export function getUser(username){
 	const root_url = "https://api.github.com/users/";
@@ -16,7 +24,7 @@ export function getUser(username){
 	const request = axios.get(url);
 	
 	// vanilla redux expects to return object of action type and data etc .
-
+	//redux thunk middleware will helps us to dispatch the function and help us to return a function instead of object.
 	return (dispatch) =>{
 		dispatch({type:FETCHING_USER});
 		request.then((response) => {
@@ -42,4 +50,8 @@ export function getRepos(username){
 			dispatch({type:FETCHED_REPO,payload:response})
 		});
 	}
+}
+
+export function getCommits(username){
+	console.log("commits working");
 } 
