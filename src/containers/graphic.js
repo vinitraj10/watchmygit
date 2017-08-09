@@ -3,6 +3,8 @@ import {getRepos} from "../actions";
 import {connect} from "react-redux";
 import {bindActionCreators} from "redux";
 import Graph from "./graph.js";
+import Fetching from "../components/fetching";
+import Nodata from "../components/nodata";
 
 class Graphic extends Component{
 	componentDidMount() {
@@ -14,8 +16,8 @@ class Graphic extends Component{
 		const isFetching = this.props.repo.isFetching;
 		const isFetched = this.props.repo.isFetched;
 		return(
-			<div className="column col-10">
-				{isFetching?(<div className="loading"/>):(isFetched?(<Graph/>):(<h1>No Data</h1>))}
+			<div className="container">
+				{isFetching?(<Fetching/>):(isFetched?(<Graph/>):(<Nodata/>))}
 			</div>
 		);
 	}

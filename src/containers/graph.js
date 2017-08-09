@@ -1,30 +1,60 @@
 import React,{Component} from "react";
 import {connect} from "react-redux";
 import {Bar} from "react-chartjs-2";
+import CommitDetail from "./commitdetail";
 
 class Graph extends Component{
-	renderGraph(){
-		const language = [];
+	ArrangeLang(){
+		const updatedlangSet=new Set();
 		this.props.repo.repos.map((repo)=>{
-			language.push(repo.language);
+			if(repo.language)
+				updatedlangSet.add(repo.language);
+
+		})
+		//console.log(updatedlangSet);
+		const updatedList = [...updatedlangSet];
+		return updatedList;
+	}
+	getLangActivity(language){
+		const temp =[];
+		language.map((val)=>{
+			let count=0;
+			this.props.repo.repos.map((repo)=>{
+				if(val===repo.language)
+					count+=1;
+			});
+			temp.push(count);
 		});
+		return temp
+	}
+	renderGraph(){
+		const language = this.ArrangeLang();
+		//console.log(language);
+		const language_activity = this.getLangActivity(language);
+		//console.log(language_activity);
 		const data = {
 			labels:language,
 			datasets: [
 				    {
-				      label: 'My First dataset',
-				      backgroundColor: 'rgba(255,99,132,0.2)',
-				      borderColor: 'rgba(255,99,132,1)',
+				      label: 'Repositories',
+				      backgroundColor: 'rgba(58, 207, 118, 1)',
+				      borderColor: 'rgba(58, 207, 118, 1)',
 				      borderWidth: 1,
-				      hoverBackgroundColor: 'rgba(255,99,132,0.4)',
-				      hoverBorderColor: 'rgba(255,99,132,1)',
-				      data: [1,2,3,4,5,6,7,8,9,10,11,12]
+				      hoverBackgroundColor: 'rgba(62, 187, 112, 1)',
+				      hoverBorderColor: 'rgba(62, 187, 112, 1)',
+				      barThickness:50,
+				      data: language_activity
 				    }
 			 	]
 			};
 			
 			return (
-				<Bar data={data} width={100} height={50}/>
+				<div className="column col-12">
+					<div className="columns">
+						<Bar data = {data} height={500} width={200} options = {{maintainAspectRatio:false}}/>
+					</div>
+					<CommitDetail/>
+				</div>
 			);
 		}
 	
