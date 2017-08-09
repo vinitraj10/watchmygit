@@ -1,7 +1,7 @@
 import React,{Component} from "react";
 import {connect} from "react-redux";
 import {Bar} from "react-chartjs-2";
-import CommitDetail from "./commitdetail";
+import MainCommit from "./maincommit";
 
 class Graph extends Component{
 	ArrangeLang(){
@@ -53,7 +53,7 @@ class Graph extends Component{
 					<div className="columns">
 						<Bar data = {data} height={500} width={200} options = {{maintainAspectRatio:false}}/>
 					</div>
-					<CommitDetail/>
+					<MainCommit/>
 				</div>
 			);
 		}

@@ -2,6 +2,7 @@ import React,{Component} from "react";
 import {connect} from "react-redux";
 import {bindActionCreators} from "redux";
 import {getCommits} from "../actions";
+import Commit from "./commit";
 
 class Commits extends Component{
 	componentDidMount() {
@@ -9,16 +10,15 @@ class Commits extends Component{
 		this.props.getCommits(username);
 	}
 	render(){
+		const isFetching = this.props.commits.isFetching;
+		const isFetched = this.props.commits.isFetched;
 		return(
-			<div className="column col-6">
-				<figure className="avatar badge avatar-xl" data-badge="8" data-initial="YZ">
-				  <img src={this.props.avatar} alt="YZ" />
-				</figure>
-			</div>
+			<div className="container">
+				{isFetching?(<div className="loading"></div>):(isFetched?(<Commit/>):(<h1>No data yet</h1>))}
+			</div>	
 		);	
 	}
 }
-
 
 function mapDistpatchToProps(dispatch){
 	return bindActionCreators({getCommits},dispatch);

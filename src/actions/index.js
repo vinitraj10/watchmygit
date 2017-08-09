@@ -16,12 +16,12 @@ export const FETCHED_COMMITS = 'FETCHED_COMMITS';
 export function getUser(username){
 	const root_url = "https://api.github.com/users/";
 	
-	const url = `${root_url}${username}`;
+	///const url = `${root_url}${username}`;
 	//Use this when rate of api request exhausted!!
-	//const client_id = <your_client id>;
-	//const client_secret = <your_client_secret>;
-	//const rate_url = `${root_url}${username}?client_id=${client_id}&&client_secret=${client_secret}`;
-	const request = axios.get(url);
+	const client_id = "e7261da5fd6d06de869c";
+	const client_secret = "2fa32ce56fcfc2e1f3cd2fb5c4fb84f371cf63d0";
+	const rate_url = `${root_url}${username}?client_id=${client_id}&&client_secret=${client_secret}`;
+	const request = axios.get(rate_url);
 	
 	// vanilla redux expects to return object of action type and data etc .
 	//redux thunk middleware will helps us to dispatch the function and help us to return a function instead of object.
@@ -38,11 +38,13 @@ export function getUser(username){
 }
 
 export function getRepos(username){
-	
+	const client_id = "e7261da5fd6d06de869c";
+	const client_secret = "2fa32ce56fcfc2e1f3cd2fb5c4fb84f371cf63d0";
 	const root_url = "https://api.github.com/users/";
 	const repo_url =  "/repos";
-	const url = `${root_url}${username}${repo_url}`
-	const request =axios.get(url);
+	//const url = `${root_url}${username}${repo_url}`
+	const rate_url = `${root_url}${username}${repo_url}?client_id=${client_id}&&client_secret=${client_secret}`;
+	const request =axios.get(rate_url);
 	
 	return (dispatch) => {
 		dispatch({type:FETCHING_REPO});
@@ -53,9 +55,13 @@ export function getRepos(username){
 }
 
 export function getCommits(username){
+	//Use this when rate of api request exhausted!!
+	const client_id = "e7261da5fd6d06de869c" ;
+	const client_secret = "2fa32ce56fcfc2e1f3cd2fb5c4fb84f371cf63d0" ;
+	//const rate_url = `${root_url}${username}?client_id=${client_id}&&client_secret=${client_secret}`;
 	const root_url = "https://api.github.com/users/";
 	const commit_url = "/events/public";
-	const url = `${root_url}${username}${commit_url}`;
+	const url = `${root_url}${username}${commit_url}?client_id=${client_id}&&client_secret=${client_secret}`;
 
 	const request = axios.get(url);
 
