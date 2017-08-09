@@ -9,10 +9,11 @@ class MainCommit extends Component{
 		const avatar= this.props.git.user.avatar_url;
 		const commits = this.props.commits;
 		return(
-			<div className="columns">
+			<div>
 				<Commits username = {username} avatar={avatar} commits={commits}/>
+				<CommitGraph/>
 			</div>
-		)
+		);
 	}
 } 
 

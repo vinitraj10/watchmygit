@@ -1,5 +1,6 @@
 import React,{Component} from "react";
 import {connect} from "react-redux";
+import EventType from "./eventtype";
 
 class Commit extends Component{
 	renderEachCommit(commit){
@@ -18,10 +19,10 @@ class Commit extends Component{
 				  </div>
 				  <div className="tile-content">
 				    <p className="tile-title">{commit.repo.name}</p>
-				    <p className="tile-subtitle">Earth's Mightiest Heroes joined forces to take on threats that were too big for any one hero to tackle...</p>
+				    <p className="tile-subtitle">demo</p>
 				  </div>
 				  <div className="tile-action">
-				    <span className="label label-primary">{commit.type}</span>
+				    <EventType commit = {commit}/>
 				  </div>
 				</div>
 				  </div>
