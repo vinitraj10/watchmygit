@@ -53,5 +53,16 @@ export function getRepos(username){
 }
 
 export function getCommits(username){
-	console.log("commits working");
+	const root_url = "https://api.github.com/users/";
+	const commit_url = "/events/public";
+	const url = `${root_url}${username}${commit_url}`;
+
+	const request = axios.get(url);
+
+	return (dispatch) =>{
+		dispatch({type:FETCHING_COMMITS});
+		request.then((response)=>{
+			dispatch({type:FETCHED_COMMITS,payload:response});
+		});
+	}
 } 
