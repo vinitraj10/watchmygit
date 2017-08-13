@@ -3,9 +3,33 @@
 }
 .label{
 	background: #dbdbdf;
+	padding :0.6em 0.3em;
+}
+.label.label-star{
+	background-color: #b6ca11;
+	color:#fff;
+}
+.label.label-issue{
+	background-color: #d26b43;
+	color:#fff;
+}
+.label.label-req{
+	background-color: #7ad2be;
+	color:#fff;
+}
+.label.label-del{
+	background-color: #ca1313;
+	color:#fff;
+}
+.label.label-rest{
+	background-color: #924e9d;
+	color: #fff;
 }
 
 .panel-header{
 	background-color: #eceff5;
 	margin-bottom: 10px;
+}
+a:hover{
+	text-decoration: none;
 }
