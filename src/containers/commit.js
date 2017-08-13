@@ -4,34 +4,51 @@ import EventType from "./eventtype";
 import CommitGraph from "./commitgraph"
 import {Scrollbars} from "react-custom-scrollbars";
 
+let subtitle="None";
+let title = " " 
 class Commit extends Component{
 	filterCommit(commit){
 		switch(commit.type){
 			case "PushEvent":
-				return "Created a commit";
+				subtitle="vinit";
+				return "Pushed";
 				break;
 			case "CreateEvent":
-				return "Created a Repositiory";
+				subtitle="raj"
+				return "Created";
 				break;
 			case "ForkeEvent":
-				return "Forked a repositiory";
+				return "Forked";
 				break;
 			case "WatchEvent":
-				return "Starred Repo";
+				const payload = commit
+				return "Starred";
 				break;
 			case "DeleteEvent":
 				return "Deleted";
 				break;
-			case "IssueEvent":
-				return "Created an issue";
+			case "IssuesEvent":
+				return "Issues";
+				break;
+			case "PullRequestEvent":
+				return "Request";
 				break;
 			default:
 				return "None";
 				break;
 		}
 	}
+
+	filterContent(commit){
+		
+	}
+
 	renderEachCommit(commit){
 		const type = this.filterCommit(commit);
+		const title = commit.repo.name;
+		const root_url = "https://github.com/";
+		const url = `${root_url}${title}`;
+		//console.log(subtitle);
 		return(
 			<div className="tile" key={commit.id}>
 				<div className="tile-icon">
@@ -40,18 +57,17 @@ class Commit extends Component{
 					</figure>
 				</div>
 				<div className="tile-content">
-					<p className="tile-title">{commit.type}</p>
-					<p className="tile-subtitle">{type}</p>
+					<p className="tile-title">{subtitle}</p>
+					<a className="tile-subtitle" href={url}>{title}</a>
 				</div>
 				<div className="tile-action">
-					<span className="label label-primary">{commit.type}</span>
+					<EventType commit={commit} type={type}/>
 				</div>
 			</div>
 		);
 	}
 	render(){
 		const all_commits = this.props.commits.commits;
-		console.log(all_commits);
 		return(
 			<div className ="columns">
 				<div className="column col-6 col-xs-12">
