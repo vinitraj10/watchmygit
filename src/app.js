@@ -7,7 +7,7 @@ import ReduxThunk from "redux-thunk";
 import App from "./components"
 import rootReducer from "./reducers";
 
-const store = applyMiddleware(ReduxThunk,createLogger())(createStore);
+const store = applyMiddleware(ReduxThunk)(createStore);
 
 render(
 	<Provider store = {store(rootReducer)} >

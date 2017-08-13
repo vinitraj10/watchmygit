@@ -8,7 +8,6 @@ import Nodata from "../components/nodata";
 
 class Graphic extends Component{
 	componentDidMount() {
-		console.log(this.props);
 		const username = this.props.username;
 		this.props.getRepos(username);
 	}

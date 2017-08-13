@@ -44,7 +44,7 @@ class CommitGraph extends Component{
 		};
 		return(
 			<div className="column col-12">
-	        	<div className="centered"><h2>Activity chart</h2></div>
+	        	<h2>Activity chart</h2>
 	        	<Pie data={data} />
 	      	</div>
 		)

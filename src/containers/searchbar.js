@@ -25,7 +25,15 @@ class SearchBar extends Component{
 			username:''
 		})
 	}
+	checkButtonClass(user){
+		if(user.isFetching)
+			return "btn btn-primary input-group-btn btn-lg loading";
+		else
+			return "btn btn-primary input-group-btn btn-lg";
+	}
 	render(){
+		const user = this.props.user;
+		const btn = this.checkButtonClass(user);
 		return (
 			<div className="container">
 				<div className = "columns content">
@@ -34,7 +42,7 @@ class SearchBar extends Component{
 						<form className="input-group" onSubmit={this.SearchUser}>
 					  		<span className="input-group-addon addon-lg">github.com/</span>
 					  		<input type="text" className="form-input input-lg" placeholder="your username" value={this.state.username} onChange={this.HandleInput}/>
-					  		<button type= "submit" className="btn btn-primary input-group-btn btn-lg">Search</button>
+					  		<button type= "submit" className={btn}>Search</button>
 						</form>
 					</div>
 				</div>
@@ -43,8 +51,14 @@ class SearchBar extends Component{
 	}
 }
 
+function mapStateToProps(state){
+	return {
+		user:state.git
+	}
+}
+
 function mapDispatchToProps(dispatch){
 	return bindActionCreators({getUser},dispatch);
 }
 
-export default connect(null,mapDispatchToProps)(SearchBar);
+export default connect(mapStateToProps,mapDispatchToProps)(SearchBar);
