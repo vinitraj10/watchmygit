@@ -4,3 +4,8 @@
 .label{
 	background: #dbdbdf;
 }
+
+.panel-header{
+	background-color: #eceff5;
+	margin-bottom: 10px;
+}
