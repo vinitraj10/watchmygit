@@ -1,7 +1,6 @@
 import React,{Component} from "react";
 import {connect} from  "react-redux";
 import Search from "../components/search";
-import Loading from "../components/Loading";
 import Detail from "./detail";
 import Err from "../components/error";
 
@@ -14,7 +13,7 @@ class Content extends Component{
 		const userDetail = this.props.git.user;
 		return(
 			<div className="container">
-				{isFetching?(<Loading/>):(!isFetched?(error?(<Err msg={error}/>):<Search/>):(<Detail user={userDetail}/>))}
+				{isFetching?(""):(!isFetched?(error?(<Err msg={error}/>):<Search/>):(<Detail user={userDetail}/>))}
 			</div>
 		);
 	}

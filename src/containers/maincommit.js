@@ -1,7 +1,7 @@
 import React,{Component} from "react";
 import {connect} from "react-redux";
 import Commits from "./commits";
-import CommitGraph from "./commitgraph"
+
 
 class MainCommit extends Component{
 	render(){
@@ -11,7 +11,6 @@ class MainCommit extends Component{
 		return(
 			<div>
 				<Commits username = {username} avatar={avatar} commits={commits}/>
-				<CommitGraph/>
 			</div>
 		);
 	}
