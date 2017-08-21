@@ -2,12 +2,14 @@ import React,{Component} from "react";
 import {connect} from "react-redux";
 import EventType from "./eventtype";
 import CommitGraph from "./commitgraph"
+import CommitDetail from '../components/CommitDetail';
 import {Scrollbars} from "react-custom-scrollbars";
 
 let subtitle="None";
 let title = " " 
 class Commit extends Component{
 	filterCommit(commit){
+		//console.log(commit);
 		switch(commit.type){
 			case "PushEvent":
 				subtitle="vinit";
@@ -17,7 +19,7 @@ class Commit extends Component{
 				subtitle="raj"
 				return "Created";
 				break;
-			case "ForkeEvent":
+			case "ForkEvent":
 				return "Forked";
 				break;
 			case "WatchEvent":
@@ -38,11 +40,6 @@ class Commit extends Component{
 				break;
 		}
 	}
-
-	filterContent(commit){
-		
-	}
-
 	renderEachCommit(commit){
 		const type = this.filterCommit(commit);
 		const title = commit.repo.name;
@@ -56,10 +53,7 @@ class Commit extends Component{
 						<img src={commit.actor.avatar_url}/>
 					</figure>
 				</div>
-				<div className="tile-content">
-					<p className="tile-title">{subtitle}</p>
-					<a className="tile-subtitle" href={url}>{title}</a>
-				</div>
+				<CommitDetail commit={commit} type={type}/>
 				<div className="tile-action">
 					<EventType commit={commit} type={type}/>
 				</div>
