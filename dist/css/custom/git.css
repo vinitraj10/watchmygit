@@ -33,3 +33,30 @@
 a:hover{
 	text-decoration: none;
 }
+.time{
+	font-size:12;
+	font-family: arial;
+}
+.push{
+	background:#d8ffdb; 
+	color:#4ca363;
+}
+.tile{
+	margin:10px;
+}
+.create{
+	background: #d9d0f4;
+	color:#635982;
+}
+.pull{
+	background:#eec9ff;
+	color:#8e34b5;
+}
+.star{
+	background:#e3ff66; 
+	color:#778c17;
+}
+.issue{
+	background: #eceff5 ;
+	color: #3b5998;
+}
