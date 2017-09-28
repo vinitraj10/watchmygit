@@ -2,7 +2,7 @@ import React,{Component} from "react";
 import {connect} from "react-redux";
 import EventType from "./eventtype";
 import CommitGraph from "./commitgraph"
-import CommitDetail from '../components/CommitDetail';
+import CommitDetail from '../components/commit';
 import {Scrollbars} from "react-custom-scrollbars";
 
 let subtitle="None";

@@ -3,8 +3,8 @@ import {getRepos} from "../actions";
 import {connect} from "react-redux";
 import {bindActionCreators} from "redux";
 import Graph from "./graph.js";
-import Fetching from "../components/fetching";
-import Nodata from "../components/nodata";
+import Fetching from "../components/static/fetching";
+import Nodata from "../components/static/nodata";
 
 class Graphic extends Component{
 	componentDidMount() {

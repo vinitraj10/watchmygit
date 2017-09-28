@@ -1,7 +1,7 @@
 import React from "react";
 import SearchBar from "../containers/searchbar";
 import Content from "../containers/content";
-const App = () => {
+const Main = () => {
 	return (
 		<div>
 			<SearchBar/>
@@ -9,4 +9,4 @@ const App = () => {
 		</div>
 	)
 }
-export default App;
+export default Main;

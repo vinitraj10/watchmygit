@@ -1,8 +1,8 @@
 import React,{Component} from "react";
 import {connect} from  "react-redux";
-import Search from "../components/search";
+import Search from "../components/search/";
 import Detail from "./detail";
-import Err from "../components/error";
+import Err from "../components/static/error";
 
 class Content extends Component{
 
