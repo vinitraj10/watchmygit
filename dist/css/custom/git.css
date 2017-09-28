@@ -60,3 +60,51 @@ a:hover{
 	background: #eceff5 ;
 	color: #3b5998;
 }
+
+.col-header{
+	background:#5764c6;
+	border-bottom:1px solid #5764c6;
+}
+
+.btn.btn-link{
+	color:#fff;
+	font-family: 'Contrail One', cursive;
+}
+.btn.btn-link:hover{
+	color:#d2d4e8;
+}
+.btn.btn-link:visited{
+	color:#fff;
+}
+.btn.btn-link:active{
+	color:#fff;
+}
+
+.badge:not([data-badge])::after, .badge[data-badge]::after {
+    background: #e91e63;
+    /* background-clip: padding-box; */
+    border-radius: 1rem;
+    box-shadow: 0 0 0 0;
+    color: #fff;
+    content: attr(data-badge);
+    display: inline-block;
+    -webkit-transform: translate(-.2rem,-1rem);
+    -ms-transform: translate(-.2rem,-1rem);
+    transform: translate(-.2rem,-1rem);
+}
+
+.brand{
+	color:#fff;
+	font-family: 'Contrail One', cursive;
+	font-size: 22;
+}
+.brand:hover{
+	color:#d2d4e8;
+}
+.brand:active{
+	color:#fff;
+}
+.brand:visited{
+	color:#fff;
+	text-decoration: none;
+}
