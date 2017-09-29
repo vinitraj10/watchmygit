@@ -1,7 +1,8 @@
 import React , {Component} from "react";
 import {connect} from "react-redux";
 import {bindActionCreators} from "redux";
-import {getUser} from "../actions";
+import {getUser} from "../actions/gitwatcher";
+import Content from "./content";
 
 class SearchBar extends Component{
 	constructor(props) {
@@ -46,6 +47,7 @@ class SearchBar extends Component{
 						</form>
 					</div>
 				</div>
+				<Content/>
 			</div>
 		);
 	}

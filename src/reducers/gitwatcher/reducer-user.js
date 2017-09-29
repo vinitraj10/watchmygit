@@ -1,6 +1,6 @@
-import {FETCHING_USER} from "../actions";
-import {FETCHED_USER} from "../actions";
-import {ERROR} from "../actions";
+import {FETCHING_USER} from "../../actions/gitwatcher";
+import {FETCHED_USER} from "../../actions/gitwatcher";
+import {ERROR} from "../../actions/gitwatcher";
 
 const intialState = {
 	isFetching: false,

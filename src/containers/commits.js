@@ -1,7 +1,7 @@
 import React,{Component} from "react";
 import {connect} from "react-redux";
 import {bindActionCreators} from "redux";
-import {getCommits} from "../actions";
+import {getCommits} from "../actions/gitwatcher";
 import Commit from "./commit";
 
 class Commits extends Component{

@@ -1,5 +1,5 @@
-import {FETCHING_COMMITS} from "../actions";
-import {FETCHED_COMMITS} from "../actions";
+import {FETCHING_COMMITS} from "../../actions/gitwatcher";
+import {FETCHED_COMMITS} from "../../actions/gitwatcher";
 
 const intialState = {
 	isFetching:false,

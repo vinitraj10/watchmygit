@@ -1,5 +1,5 @@
-import {FETCHING_REPO} from "../actions";
-import {FETCHED_REPO} from "../actions";
+import {FETCHING_REPO} from "../../actions/gitwatcher";
+import {FETCHED_REPO} from "../../actions/gitwatcher";
 
 const intialState = {
 	isFetching:false,

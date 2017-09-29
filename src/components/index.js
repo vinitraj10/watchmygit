@@ -1,14 +1,11 @@
 import React from 'react';
+import {BrowserRouter as Router } from 'react-router-dom';
 import Header from '../components/layout/header';
-import SearchBar from '../containers/searchbar';
-import Content from '../containers/content';
-const App = () => {
+const Main = () => {
 	return (
-		<div>
+		<Router>
 			<Header/>
-			<SearchBar/>
-			<Content/>
-		</div>
+		</Router>
 	)
 }
-export default App;
+export default Main;

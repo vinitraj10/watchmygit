@@ -19,7 +19,10 @@ const config = {
 				loader: 'babel-loader'
 			}
 		]
-	}
+	},
+	devServer: {
+	    historyApiFallback: true,
+	},
 };
 
 module.exports = config;

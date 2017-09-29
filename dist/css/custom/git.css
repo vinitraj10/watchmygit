@@ -68,7 +68,7 @@ a:hover{
 
 .btn.btn-link{
 	color:#fff;
-	font-family: 'Contrail One', cursive;
+	font-family: 'Pacifico', cursive;
 }
 .btn.btn-link:hover{
 	color:#d2d4e8;
@@ -95,7 +95,7 @@ a:hover{
 
 .brand{
 	color:#fff;
-	font-family: 'Contrail One', cursive;
+	font-family: 'Pacifico', cursive;
 	font-size: 22;
 }
 .brand:hover{
@@ -107,4 +107,19 @@ a:hover{
 .brand:visited{
 	color:#fff;
 	text-decoration: none;
+}
+
+.hckHeader{
+	font-family: 'Contrail One', cursive;
+}
+
+.btn.btn-hck{
+	color:#fff;
+	background: #e91e63;
+	border:#e91e63;
+}
+
+.hck-result{
+	border:1px solid #ddd;
+	border-radius: 10px;
 }
