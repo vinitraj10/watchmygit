@@ -1,6 +1,5 @@
 # Note
-This october You can also find Whether You are getting A t-shirt or not in <strong>Hacktoberfest-2k17</strong>.By entering your username and it will tell you whether you have completed 4 PR's or not.
-
+This october You can also find Whether You are getting A t-shirt or not in <strong>Hacktoberfest-2k17</strong> by entering your username and it will tell you whether you have completed 4 PR's or not along with your commit details and activity chart
 
 # Preview
 ![](http://i.imgur.com/1kagUVg.gif)
