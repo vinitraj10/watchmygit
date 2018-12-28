@@ -2,7 +2,7 @@ const webpack = require('webpack');
 const path = require('path');
 
 DEV_DIR = path.resolve(__dirname,'src');
-BUILD_DIR = path.resolve(__dirname,'dist');
+BUILD_DIR = path.resolve(__dirname,'dist/js');
 
 const config = {
 	entry : DEV_DIR + '/app.js',
